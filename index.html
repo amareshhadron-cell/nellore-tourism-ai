@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nellore - AI Powered Tourism Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <header class="bg-blue-700 text-white p-6 text-center shadow-lg">
+    <h1 class="text-4xl font-bold">Welcome to Nellore</h1>
+    <p class="text-lg mt-2">An AI-Powered Smart Tourism Experience</p>
+  </header>
+
+  <section class="p-8 max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
+    <div class="bg-white rounded-2xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-3">About Nellore</h2>
+      <p>
+        Nellore is a historic and cultural city known for its temples, rich cuisine,
+        agriculture, and beautiful coastal environment.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-3">Popular Places</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>Ranganatha Temple</li>
+        <li>Mypadu Beach</li>
+        <li>Nellapattu Bird Sanctuary</li>
+        <li>Jonnawada Temple</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-white p-8 shadow max-w-6xl mx-auto rounded-2xl">
+    <h2 class="text-2xl font-semibold mb-4">AI Travel Guide</h2>
+    <input id="question" type="text" placeholder="Ask about Nellore tourism..." class="border p-3 rounded w-full" />
+    <button onclick="generateAnswer()" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded">Ask AI</button>
+    <p id="answer" class="mt-4 text-lg"></p>
+  </section>
+
+  <footer class="text-center p-6 mt-8 bg-gray-200">
+    <p>AI Tourism Website | Nellore</p>
+  </footer>
+
+  <script>
+    function generateAnswer() {
+      let q = document.getElementById("question").value.toLowerCase();
+      let response = "";
+
+      if(q.includes("food")) {
+        response = "Nellore is famous for spicy Nellore Chepala Pulusu and seafood dishes.";
+      }
+      else if(q.includes("temple")) {
+        response = "You can visit Ranganatha Temple and Jonnawada Temple.";
+      }
+      else if(q.includes("beach")) {
+        response = "Mypadu Beach is one of the best tourist attractions.";
+      }
+      else {
+        response = "Nellore is a cultural city with temples, beaches, and delicious cuisine.";
+      }
+
+      document.getElementById("answer").innerText = response;
+    }
+  </script>
+
+</body>
+</html>
